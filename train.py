@@ -317,8 +317,9 @@ def main():
     if opt.train_from:
         print('Loading model from checkpoint at %s' % opt.train_from)
         chk_model = checkpoint['model']
-        generator_state_dict = chk_model.generator.state_dict()
-        model_state_dict = {k: v for k, v in chk_model.state_dict().items()
+        generator_state_dict = checkpoint['generator']
+        #generator_state_dict = chk_model.generator.state_dict()
+        model_state_dict = {k: v for k, v in chk_model.items()
                             if 'generator' not in k}
         model.load_state_dict(model_state_dict)
         generator.load_state_dict(generator_state_dict)

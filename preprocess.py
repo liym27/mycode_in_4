@@ -10,6 +10,10 @@ import argparse
 import torch
 import re
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 matplotlib.use('Agg')
 
 parser = argparse.ArgumentParser(description='preprocess.py')

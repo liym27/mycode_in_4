@@ -93,7 +93,7 @@ def decode_file(translator):
 
         for b in range(len(predBatch)):
             count += 1
-            outF.write("".join(predBatch[b][0]).encode('utf8')  + '\n')
+            outF.write(" ".join(predBatch[b][0]).encode('utf8')  + '\n')
             # out_gold_file.write("".join(tgtBatch[b]).encode('utf8') + '\n')
             if count % 1000 == 0:
                 print("Decoded %d sents. Elapsed time %d s." % (count, time.time() - start_time))
